@@ -1,0 +1,30 @@
+{
+  "name": "react-code-project-1",
+  "version": "1.0.0",
+  "description": "It's a react app",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShivaKeerthi0/react-journey.git"
+  },
+  "keywords": [],
+  "author": "Shiva Keerthi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShivaKeerthi0/react-journey/issues"
+  },
+  "homepage": "https://github.com/ShivaKeerthi0/react-journey#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}

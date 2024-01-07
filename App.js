@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client'
+
+
 // Creating Plain elements
 
 const heading = React.createElement("h1",
