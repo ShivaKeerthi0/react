@@ -1,5 +1,48 @@
-#heading{
-    color:red;
-    font: bold;
-    font-size: 50px;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000000;
+    margin-bottom: 10px;
 }
+.logo > img {
+    height: 100px;
+    width: 150px;
+}
+
+.nav-items >ul{
+    display: flex;
+    list-style: none;
+    padding: 10px 100px;
+}
+
+.nav-items > ul > li {
+    padding: 10px 10px;
+    
+}
+
+
+.body{
+    border: 1px solid #000000;
+
+}
+
+.restuarnt-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restuarant-card {
+    width: 300px;
+    margin: 10px;
+    background-color: bisque;
+    padding: 10px;
+}
+.restuarant-card:hover{
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+.restuarant-card > img{
+    width: 300px;
+}
+
