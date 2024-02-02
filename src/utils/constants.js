@@ -1,2 +1,3 @@
-export const CDN_URL = 'https://b.zmtcdn.com/data/brand_creatives/logos/466f8fc74274145f3b21795c3d21816d_1589433071.png';
+export const CDN_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660';
 export const LOGO_URL = 'https://img.freepik.com/premium-vector/geometric-vintage-creative-crown-abstract-logo-design-vector-template-vintage-crown-logo-royal-king-queen-concept-symbol-logotype-concept-icon_412311-3665.jpg?w=1060';
+export const RESTURANT_DATA_API_URL = 'https://www.swiggy.com/api/seo/getListing?lat=17.4367684&lng=78.40071019999999';
