@@ -12,7 +12,10 @@
 .nav-items >ul{
     display: flex;
     list-style: none;
-    padding: 10px 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 140px;
+    padding-right: 50px;
 }
 
 .nav-items > ul > li {
@@ -21,21 +24,27 @@
 }
 
 
-.body{
+.body, .shimmer-component-container{
     border: 1px solid #000000;
 
 }
 
-.restuarnt-container{
+.restuarnt-container,.shimmer-component-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.restuarant-card {
+.restuarant-card,.shimmer-component {
     width: 300px;
     margin: 10px;
     background-color: bisque;
     padding: 10px;
+}
+
+.shimmer-component{
+    background-color: #F5F5F5;
+    height: 500px;
 }
 .restuarant-card:hover{
     border: 1px solid #000000;
@@ -44,6 +53,7 @@
 
 .restuarant-card > img{
     width: 300px;
+    height:200px;
 }
 
 .filter-btn{
@@ -52,3 +62,18 @@
     cursor: pointer;
 }
 
+.login-btn{
+    background-color: green;
+    width: 100px;
+    cursor: pointer;
+}
+.search-input{
+    width: 1000px;
+    height: 20px;
+    margin-left: 50px;
+    margin-right: 5px;
+}
+.search-btn{
+    background-color:greenyellow;
+    height:25px;
+}
