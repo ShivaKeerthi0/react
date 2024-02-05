@@ -1,5 +1,6 @@
-import {LOGO_URL} from '../utils/constants.js';
+import {LOGO_URL, APP_URL} from '../utils/constants.js';
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
     const set = (button)=>{
 
         if(button.toLowerCase() === 'login'){
-            setButton('Logiut');
+            setButton('Logout');
             setBackgroundColor('red');
         }else{
             setButton('Login');
@@ -22,13 +23,14 @@ const Header = () => {
     return (
         <div className="header">
             <div className="logo">
-                <img src = {LOGO_URL}/>
+                
+                <Link className="image-link-router"to="."><img src = {LOGO_URL}/></Link>
             </div>
             <div className="nav-items">
                 <ul> 
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About Us</Link></li>
+                    <li><Link to="/contact">Contact Us</Link></li>
                     <li>Cart</li>
                     <button className="login-btn" style={{'backgroundColor':backgroundColor}}
                     onClick={()=>{

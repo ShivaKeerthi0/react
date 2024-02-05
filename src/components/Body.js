@@ -1,7 +1,8 @@
 import { useState, useEffect }from 'react';
 import RestuarantCard from './RestuarantCard';
 import ShimmerComponent from './ShimmerComponent';
-import {RESTURANT_DATA_API_URL, CDN_URL} from '../utils/constants'
+import {RESTURANT_DATA_API_URL, CDN_URL} from '../utils/constants';
+import {Link} from 'react-router-dom';
 
 
 const Body = () => {
@@ -9,6 +10,7 @@ const Body = () => {
     const [restuarants, setRestuarants ]= useState([]);
     const [searchValue,setSearchValue] = useState("");
     const [restuarantsDuplicate,setRestuarantsDuplicate] = useState([]); 
+    let length = 12;
 
     useEffect(() => {
         console.log("Fetching  Data... !!!"); // This executed after the components have been loaded
@@ -33,7 +35,7 @@ const Body = () => {
 
     return restuarants.length === 0 ?   
     
-    (<ShimmerComponent/>) : 
+    (<ShimmerComponent length = {length}/>) : 
     
     (
         <div className="body">
@@ -63,12 +65,12 @@ const Body = () => {
             <div className="restuarnt-container">
                 {
                    restuarantsDuplicate.map((restuarant) => (
-                         <RestuarantCard key = {restuarant.id}
+                        <Link key = {restuarant.info.id} to = {'/resturant/'+ restuarant.info.id} > <RestuarantCard 
                             image = {CDN_URL +'/'+restuarant.info.cloudinaryImageId}
                             name = {restuarant.info.name}
                             Address = {restuarant.info.locality}
                             ratings = {restuarant.info.avgRating}
-                            cusines = {restuarant.info.cuisines.join(", ")}/>
+                            cusines = {restuarant.info.cuisines.join(", ")}/></Link>
 
                     ))
 

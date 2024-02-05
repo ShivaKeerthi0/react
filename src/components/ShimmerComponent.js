@@ -1,17 +1,12 @@
- const ShimmerComponent = () => {
+ const ShimmerComponent = (props) => {
 
     return (
         <div className="shimmer-component-container">
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
-            <div className="shimmer-component"></div>
+           {
+            Array.from({ length: props.length }).map((_, index) => (
+             <div className="shimmer-component" key={index} ></div>
+            ))
+           }
         </div>
     );
 
