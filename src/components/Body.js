@@ -3,13 +3,14 @@ import RestuarantCard from './RestuarantCard';
 import ShimmerComponent from './ShimmerComponent';
 import {RESTURANT_DATA_API_URL, CDN_URL} from '../utils/constants';
 import {Link} from 'react-router-dom';
-
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Body = () => {
 
     const [restuarants, setRestuarants ]= useState([]);
     const [searchValue,setSearchValue] = useState("");
     const [restuarantsDuplicate,setRestuarantsDuplicate] = useState([]); 
+    const onlineStatus = useOnlineStatus();
     let length = 12;
 
     useEffect(() => {
@@ -31,7 +32,13 @@ const Body = () => {
     }
 
     console.log("Rendered Successfully !!!"); // This executed while the body is rendering
-    
+
+    if(!onlineStatus){
+        console.log("My Online Status is : "+ onlineStatus);
+        return (
+            <h1>You seems to be Offline. Please trun on your internet connection...!!!</h1>
+        )
+    }
 
     return restuarants.length === 0 ?   
     
