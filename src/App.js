@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense,lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -8,6 +8,10 @@ import ContanctUs from './components/ContactUs';
 import Error from './components/Error';
 import ResturantMenu from './components/ResturantMenu';
 
+
+// this is lazy loading or dynamic loading where the build can be split into chuncks
+
+const Grocery = lazy(()=> import('./components/Grocery.js'));  
 
 const App = () =>{
 
@@ -42,6 +46,10 @@ const appRouter = createBrowserRouter([
                 path : '/resturant/:resid',
                 element : <ResturantMenu/>
 
+            },
+            {
+                path : '/grocery',
+                element : <Suspense fallback={<h2>Loading...</h2>}><Grocery/></Suspense>
             }
 
         ],
