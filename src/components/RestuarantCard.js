@@ -1,12 +1,12 @@
 const Restuarantcard = (props) =>{
 
     return (
-        <div className="restuarant-card">
-            <img src={props.image}/>
-            <p>{props.name}</p>
-            <p>{props.cusines}</p>
-            <p>{props.Address}</p>
-            <p>{props.ratings}</p>
+        <div className="border-s-black shadow-xl rounded-2xl justify-center h-96 ">
+            <img  className="rounded-lg shadow-lg h-56 w-46 mt-5 mx-auto"   src={props.image}/>
+            <p className="font-bold m-2 p-1 text-xl">{props.name}</p>
+            <p className="font-bold m-2 p-1 text-lg">{props.cusines}</p>
+            <p className="font-bold m-2 p-1 text-lg">{props.Address}</p>
+            <p className="font-bold m-2 p-1 text-lg">{props.ratings}</p>
         </div>
     );
 }
