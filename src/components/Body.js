@@ -1,5 +1,6 @@
 import { useState, useEffect }from 'react';
 import RestuarantCard from './RestuarantCard';
+import RestuarantPromoted from './RestuarantPromoted';
 import ShimmerComponent from './ShimmerComponent';
 import {RESTURANT_DATA_API_URL, CDN_URL} from '../utils/constants';
 import {Link} from 'react-router-dom';
@@ -12,6 +13,8 @@ const Body = () => {
     const [restuarantsDuplicate,setRestuarantsDuplicate] = useState([]); 
     const onlineStatus = useOnlineStatus();
     let length = 12;
+
+    const RestuarantPromotedCard = RestuarantPromoted(RestuarantCard);
 
     useEffect(() => {
         console.log("Fetching  Data... !!!"); // This executed after the components have been loaded
@@ -69,15 +72,30 @@ const Body = () => {
 
                 } } > Top Rated Restuarants</button>
             </div>
-            <div className="restuarnt-container">
+            <div className="flex flex-wrap m-2 p-2 bg-gray-100 justify-between ">
                 {
                    restuarantsDuplicate.map((restuarant) => (
-                        <Link key = {restuarant.info.id} to = {'/resturant/'+ restuarant.info.id} > <RestuarantCard 
+                   
+                        <Link  className="w-72 m-3  px-2 mx-2 h-4/12 align-middle" key = {restuarant.info.id} to = {'/resturant/'+ restuarant.info.id} > {
+
+                            restuarant?.info?.avgRating >= 4  ? 
+                            <RestuarantPromotedCard
                             image = {CDN_URL +'/'+restuarant.info.cloudinaryImageId}
                             name = {restuarant.info.name}
                             Address = {restuarant.info.locality}
                             ratings = {restuarant.info.avgRating}
-                            cusines = {restuarant.info.cuisines.join(", ")}/></Link>
+                            cusines = {restuarant.info.cuisines.join(", ")}
+                            />  : 
+
+                            <RestuarantCard 
+                            image = {CDN_URL +'/'+restuarant.info.cloudinaryImageId}
+                            name = {restuarant.info.name}
+                            Address = {restuarant.info.locality}
+                            ratings = {restuarant.info.avgRating}
+                            cusines = {restuarant.info.cuisines.join(", ")}
+                            />
+                        }
+                        </Link>
 
                     ))
 

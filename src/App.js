@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs';
 import ContanctUs from './components/ContactUs';
 import Error from './components/Error';
 import ResturantMenu from './components/ResturantMenu';
+import userContext from './utils/UserContext';
 
 
 // this is lazy loading or dynamic loading where the build can be split into chuncks
@@ -17,7 +18,9 @@ const App = () =>{
 
     return (
         <div className="app">
+            <userContext.Provider value={{loggedUser: "Azad"}}>
             <Header/>
+            </userContext.Provider>
             <Outlet/>
         </div>
     );
