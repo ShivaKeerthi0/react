@@ -4,13 +4,18 @@ import {Link} from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus.js';
 import { useContext } from 'react';
 import userContext from '../utils/UserContext';
+import {useSelector} from 'react-redux'
+
+
 
 
 const Header = () => {
 
     const [Button, setButton] = useState("Login");
-    const [backgroundColor , setBackgroundColor] = useState("green")
+    const [backgroundColor , setBackgroundColor] = useState("green");
     const data = useContext(userContext);
+
+    const data_items = useSelector((store)=> store.cart.items );
 
 
     console.log("user context is : " + data)
@@ -39,7 +44,7 @@ const Header = () => {
                     <li className="padding px-5 hover:cursor-pointer"><Link to="/about">About Us</Link></li>
                     <li className="padding px-5 hover:cursor-pointer"><Link to="/contact">Contact Us</Link></li>
                     <li className="padding px-5 hover:cursor-pointer"><Link to="/grocery">Grocery</Link></li>
-                    <li className="padding px-5 hover:cursor-pointer">Cart</li>
+                    <li className="padding px-5 hover:cursor-pointer"><Link to= '/cart'>Cart ( {data_items.length} Items )</Link></li>
                     <li className="padding px-5">
                         {
                             data.loggedUser

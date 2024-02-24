@@ -76,7 +76,7 @@ const Body = () => {
                 {
                    restuarantsDuplicate.map((restuarant) => (
                    
-                        <Link  className="w-72 m-3  px-2 mx-2 h-4/12 align-middle" key = {restuarant.info.id} to = {'/resturant/'+ restuarant.info.id} > {
+                        <Link  className="w-72 m-3  px-2 mx-2 h-4/12 align-middle border-2 hover:border-black" key = {restuarant.info.id} to = {'/resturant/'+ restuarant.info.id} > {
 
                             restuarant?.info?.avgRating >= 4  ? 
                             <RestuarantPromotedCard

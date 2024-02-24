@@ -9,12 +9,12 @@ const ResturantCategory = (props) =>{
 
     return (
         <div className="w-full">
-            <div className="m-auto flex flex-wrap w-6/12 bg-gray-100  shadow-2xl rounded-lg justify-between  cursor-pointer" onClick={
+            <div className="border-2 hover:border-gray-200 m-auto flex flex-wrap w-6/12 bg-gray-100  shadow-2xl rounded-lg justify-between  cursor-pointer" onClick={
                     () =>{
                         props.setShowIndex();
                     }
                 }>
-                <h1 className="font-bold align-middle text-lg m-2 p-2" >{props.title}</h1>
+                <h1 className="font-bold align-middle text-lg m-2 p-2 " >{props.title}</h1>
                 <p className="my-3 mx-2 p-2">👇🏽</p>
             </div>
 
